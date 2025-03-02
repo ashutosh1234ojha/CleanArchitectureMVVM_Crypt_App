@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger.hilt.android.gradle)
+
+
+
 }
 
 android {
@@ -37,7 +42,11 @@ android {
     buildFeatures {
         compose = true
     }
+
+
 }
+
+
 
 dependencies {
 
@@ -55,6 +64,11 @@ dependencies {
     implementation(libs.squareup.retrofit2.converter.gson)
     implementation(libs.squareup.okhttp3.okhttp)
     implementation(libs.squareup.okhttp3.interceptor)
+
+    //Hilt
+
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.android.compiler)
 
 
 
