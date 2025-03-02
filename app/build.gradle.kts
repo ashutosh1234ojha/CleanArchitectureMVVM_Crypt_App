@@ -3,9 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.dagger.hilt.android.gradle)
-
-
 
 }
 
@@ -43,6 +42,10 @@ android {
         compose = true
     }
 
+    kapt {
+        generateStubs = true
+    }
+
 
 }
 
@@ -66,14 +69,8 @@ dependencies {
     implementation(libs.squareup.okhttp3.interceptor)
 
     //Hilt
-
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.android.compiler)
-
-
-
-
-
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
