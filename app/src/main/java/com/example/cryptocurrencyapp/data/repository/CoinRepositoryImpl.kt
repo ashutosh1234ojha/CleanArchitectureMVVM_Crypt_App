@@ -7,11 +7,12 @@ import com.example.cryptocurrencyapp.domain.repository.CoinRepository
 import javax.inject.Inject
 
 class CoinRepositoryImpl @Inject constructor(val api: CoinPaprikaApi) : CoinRepository {
-    override fun getCoins(): List<CoinDto> {
-        TODO("Not yet implemented")
+    override suspend fun getCoins(): List<CoinDto> {
+        return api.getCoins()
     }
 
-    override fun getCoinById(coinId: String): CoinDetailsDto {
-        TODO("Not yet implemented")
+    override suspend fun getCoinById(coinId: String): CoinDetailsDto {
+        return api.getCoinById(coinId)
+
     }
 }

@@ -19,31 +19,31 @@ class CoinViewModel @Inject constructor(
     saveStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _coinList = mutableStateOf(CoinDetailState())
-    val coinList: State<CoinDetailState> = _coinList
+    private val _coin = mutableStateOf(CoinDetailState())
+    val coin: State<CoinDetailState> = _coin
 
     init {
         saveStateHandle.get<String>(Constants.PARAM_COIN_ID)?.let { coinId ->
-            getCoinList(coinId)
+            getCoin(coinId)
         }
     }
 
 
-    private fun getCoinList(coinId: String) {
+    private fun getCoin(coinId: String) {
         viewModelScope.launch {
 
             getCoinUseCase(coinId).collect {
                 when (it) {
                     is Resource.Loading -> {
-                        _coinList.value = CoinDetailState(isLoading = true)
+                        _coin.value = CoinDetailState(isLoading = true)
                     }
 
                     is Resource.Success -> {
-                        _coinList.value = CoinDetailState(coins = it.data)
+                        _coin.value = CoinDetailState(coin = it.data)
                     }
 
                     is Resource.Error -> {
-                        _coinList.value =
+                        _coin.value =
                             CoinDetailState(error = it.message ?: "An unexpected error occurred")
                     }
 

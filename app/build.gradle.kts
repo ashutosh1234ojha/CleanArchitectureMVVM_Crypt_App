@@ -78,6 +78,8 @@ dependencies {
     implementation(libs.androidx.hilt.nav.compose)
 //    implementation(libs.androidx.hilt.navigation.compose)
 //    kapt(libs.dagger.androidx.hilt.compiler)
+    implementation ("com.google.accompanist:accompanist-flowlayout:0.17.0")
+
 
 
 //    #implementation "com.google.dagger:hilt-android:2.38.1"

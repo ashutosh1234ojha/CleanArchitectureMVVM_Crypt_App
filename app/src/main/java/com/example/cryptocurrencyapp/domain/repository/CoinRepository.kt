@@ -5,6 +5,6 @@ import com.example.cryptocurrencyapp.data.remote.dto.CoinDto
 
 interface CoinRepository {
 
-    fun getCoins():List<CoinDto>
-    fun getCoinById(coinId:String): CoinDetailsDto
+   suspend fun getCoins():List<CoinDto>
+   suspend fun getCoinById(coinId:String): CoinDetailsDto
 }

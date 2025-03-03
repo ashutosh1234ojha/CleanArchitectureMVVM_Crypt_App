@@ -25,7 +25,7 @@ fun CoinListScreen(navController: NavController, viewModel: CoinListViewModel = 
 
     val value = viewModel.coinList.value
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().padding(vertical = 20.dp, horizontal = 10.dp)) {
 
         LazyColumn(modifier = Modifier.fillMaxSize()) {
 
