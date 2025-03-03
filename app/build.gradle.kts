@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.dagger.hilt.android.gradle)
+//    alias(libs.plugins.hilt.compiler)
 
 }
 
@@ -70,7 +71,20 @@ dependencies {
 
     //Hilt
     implementation(libs.dagger.hilt.android)
+    implementation(libs.androidx.navigation.runtime.android)
     kapt(libs.dagger.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+//    implementation(libs.androidx.hilt.lifecycle.viewmodel)
+    implementation(libs.androidx.hilt.nav.compose)
+//    implementation(libs.androidx.hilt.navigation.compose)
+//    kapt(libs.dagger.androidx.hilt.compiler)
+
+
+//    #implementation "com.google.dagger:hilt-android:2.38.1"
+//    #kapt "com.google.dagger:hilt-android-compiler:2.37"
+//    #implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+//    #kapt "androidx.hilt:hilt-compiler:1.0.0"
+//    #im
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

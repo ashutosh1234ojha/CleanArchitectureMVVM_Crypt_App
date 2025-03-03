@@ -11,7 +11,10 @@ composeBom = "2024.04.01"
 retrofit = "2.9.0"
 okhttp = "4.12.0"
 hilt = "2.51.1"
-hiltCompiler = "2.37"
+hiltCompiler = "1.0.0"
+navigationRuntimeAndroid = "2.9.0-alpha07"
+androidxHilt = "1.2.0"
+androidxHiltCompiler = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,11 +37,16 @@ squareup-okhttp3-okhttp= { group = "com.squareup.okhttp3", name = "okhttp",versi
 squareup-okhttp3-interceptor= { group = "com.squareup.okhttp3", name = "logging-interceptor",version.ref = "okhttp" }
 dagger-hilt-android= { group = "com.google.dagger", name = "hilt-android",version.ref = "hilt" }
 dagger-hilt-android-compiler= { group = "com.google.dagger", name = "hilt-android-compiler",version.ref = "hilt" }
+androidx-hilt-lifecycle-viewmodel= { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel",version.ref = "androidxHilt" }
+androidx-hilt-compiler= { group = "androidx.hilt", name = "hilt-compiler",version.ref = "androidxHiltCompiler" }
+androidx-hilt-nav-compose= { group = "androidx.hilt", name = "hilt-navigation-compose",version.ref = "androidxHiltCompiler" }
+androidx-navigation-runtime-android = { group = "androidx.navigation", name = "navigation-runtime-android", version.ref = "navigationRuntimeAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+hilt-compiler = { id = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 kotlin-kapt = { id = "kotlin-kapt" }
 ksp = { id = "com.google.devtools.ksp", version = "2.0.0-1.0.23" }
 
